@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="list_item_horizontal_padding">22dp</dimen>
+    <dimen name="list_item_vertical_padding">14dp</dimen>
+    <dimen name="list_item_bottom_margin">8dp</dimen>
+    <dimen name="btn_top_margin">16dp</dimen>
+</resources>
