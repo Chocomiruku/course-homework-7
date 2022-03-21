@@ -23,8 +23,10 @@ class ModelAdapter :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(model: Model) {
-            binding.idText.text = binding.idText.text.toString().plus(" " + model.id)
-            binding.userIdText.text = binding.userIdText.text.toString().plus(" " + model.userId)
+            val context = binding.idText.context
+
+            binding.idText.text = context.getString(R.string.id).plus(" " + model.id)
+            binding.userIdText.text = context.getString(R.string.user_id).plus(" " + model.userId)
             binding.titleText.text = model.title
             binding.bodyText.text = model.body
         }
