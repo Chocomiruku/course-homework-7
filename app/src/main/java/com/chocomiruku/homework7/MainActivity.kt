@@ -76,6 +76,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // Deprecated
     private fun parseWithIntentService() {
         val intent = Intent(this, MyIntentService::class.java)
         startService(intent)
@@ -88,7 +89,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // Deprecated
     private val broadCastReceiver = object : BroadcastReceiver() {
         override fun onReceive(contxt: Context?, intent: Intent?) {
             when (intent?.action) {
