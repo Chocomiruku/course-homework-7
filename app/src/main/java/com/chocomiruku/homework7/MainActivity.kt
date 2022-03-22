@@ -33,25 +33,19 @@ class MainActivity : AppCompatActivity() {
             .registerReceiver(broadCastReceiver, IntentFilter(LIST_PARSED))
 
         binding.threadBtn.setOnClickListener {
-            if (adapter.currentList.isNotEmpty()) {
-                adapter.submitList(emptyList())
-            }
+            clearList()
             binding.progressIndicator.show()
             parseWithThread()
         }
 
         binding.executorBtn.setOnClickListener {
-            if (adapter.currentList.isNotEmpty()) {
-                adapter.submitList(emptyList())
-            }
+            clearList()
             binding.progressIndicator.show()
             parseWithExecutor()
         }
 
         binding.intentServiceBtn.setOnClickListener {
-            if (adapter.currentList.isNotEmpty()) {
-                adapter.submitList(emptyList())
-            }
+            clearList()
             binding.progressIndicator.show()
             parseWithIntentService()
         }
@@ -86,6 +80,12 @@ class MainActivity : AppCompatActivity() {
         runOnUiThread {
             binding.progressIndicator.hide()
             adapter.submitList(parsedModels)
+        }
+    }
+
+    private fun clearList() {
+        if (adapter.currentList.isNotEmpty()) {
+            adapter.submitList(emptyList())
         }
     }
 
