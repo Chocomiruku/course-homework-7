@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.chocomiruku.homework7.databinding.ListItemBinding
 
 class ModelAdapter :
-    ListAdapter<Model, ModelAdapter.ViewHolder>(FactDiffCallback()) {
+    ListAdapter<Model, ModelAdapter.ViewHolder>(ModelDiffCallback()) {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val fact = getItem(position)
@@ -42,7 +42,7 @@ class ModelAdapter :
         }
     }
 
-    class FactDiffCallback :
+    class ModelDiffCallback :
         DiffUtil.ItemCallback<Model>() {
 
         override fun areItemsTheSame(oldItem: Model, newItem: Model): Boolean {
