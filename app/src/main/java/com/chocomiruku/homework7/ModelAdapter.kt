@@ -11,8 +11,8 @@ class ModelAdapter :
     ListAdapter<Model, ModelAdapter.ViewHolder>(ModelDiffCallback()) {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val fact = getItem(position)
-        holder.bind(fact)
+        val model = getItem(position)
+        holder.bind(model)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
