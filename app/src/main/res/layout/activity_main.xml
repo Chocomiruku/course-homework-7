@@ -6,13 +6,67 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progress_indicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/thread_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/parsed_models_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/thread_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/list_item" />
+
+    <Button
+        android:id="@+id/thread_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/btn_top_margin"
+        android:backgroundTint="@color/green_200"
+        android:text="@string/thread"
+        app:layout_constraintBottom_toTopOf="@+id/executor_btn"
+        app:layout_constraintEnd_toEndOf="@id/intent_service_btn"
+        app:layout_constraintStart_toStartOf="@id/intent_service_btn"
+        app:layout_constraintTop_toBottomOf="@id/parsed_models_list"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/executor_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/executor"
+        app:layout_constraintBottom_toTopOf="@+id/intent_service_btn"
+        app:layout_constraintEnd_toEndOf="@id/intent_service_btn"
+        app:layout_constraintStart_toStartOf="@id/intent_service_btn"
+        app:layout_constraintTop_toBottomOf="@+id/thread_btn" />
+
+    <Button
+        android:id="@+id/intent_service_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/violet_300"
+        android:text="@string/intent_service"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/executor_btn" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="16dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

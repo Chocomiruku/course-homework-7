@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">Homework7</string>
+    <string name="app_name">Homework 7: Concurrency</string>
+    <string name="thread">Parse with thread</string>
+    <string name="executor">Parse with executor</string>
+    <string name="intent_service">Parse with intent service</string>
+    <string name="id">ID:</string>
+    <string name="user_id">User\'s ID:</string>
+    <string name="title">Title</string>
+    <string name="body">Body</string>
 </resources>
